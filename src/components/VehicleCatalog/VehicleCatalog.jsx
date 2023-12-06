@@ -1,0 +1,7 @@
+const VehicleCatalog = () => {
+
+}
+
+export {
+    VehicleCatalog
+}

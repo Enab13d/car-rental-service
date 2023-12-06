@@ -1,0 +1,7 @@
+const Modal = () => {
+
+}
+
+export {
+    Modal,
+}

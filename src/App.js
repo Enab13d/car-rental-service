@@ -1,24 +1,22 @@
-import logo from './logo.svg';
-import './App.css';
+import { lazy } from "react";
+import "./App.css";
+import { Routes, Route, Navigate } from "react-router-dom";
+import { SharedLayout } from "SharedLayout";
+
+const HomePage = lazy(() => import("./views/HomePage"));
+const CatalogPage = lazy(() => import("./views/CatalogPage"));
+const FavoritesPage = lazy(() => import("./views/FavoritesPage"));
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Routes>
+      <Route path="/" element={<SharedLayout />}>
+        <Route index element={<HomePage />} />
+        <Route path="/catalog" element={<CatalogPage />} />
+        <Route path="/favorites" element={<FavoritesPage />} />
+        <Route path="*" element={<Navigate to={<HomePage />} />} />
+      </Route>
+    </Routes>
   );
 }
 
