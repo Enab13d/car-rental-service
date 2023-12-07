@@ -3,9 +3,9 @@ import "./App.css";
 import { Routes, Route, Navigate } from "react-router-dom";
 import { SharedLayout } from "SharedLayout";
 
-const HomePage = lazy(() => import("./views/HomePage"));
-const CatalogPage = lazy(() => import("./views/CatalogPage"));
-const FavoritesPage = lazy(() => import("./views/FavoritesPage"));
+const HomePage = lazy(() => import("../../views/HomePage"));
+const CatalogPage = lazy(() => import("../../views/CatalogPage"));
+const FavoritesPage = lazy(() => import("../../views/FavoritesPage"));
 
 function App() {
   return (
