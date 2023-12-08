@@ -15,3 +15,7 @@ const theme = {
     },
     sizing: value => `${value*2}px`
 }
+
+export {
+  theme
+}
