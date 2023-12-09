@@ -6,11 +6,14 @@ const theme = {
     colors: {
         lightBlue: '#3470FF',
         btnBgHover: '#0B44CD',
-        primaryWhite: '#fff',
-        textPrimaryBlack: '121417',
+      primaryWhite: '#fff',
+        conditionBg: '#F9F9F9',
+      textPrimaryBlack: '#121417',
+        textPrimarySemiTransparent: 'rgba(18, 20, 23, 0.5)',
         textLightGray: 'rgba(18, 20, 23, 0.2)',
         textDarkGray: 'rgba(18, 20, 23, 0.5)',
-        inputBg: 'rgba(247, 247, 251, 1)',
+      inputBg: 'rgba(247, 247, 251, 1)',
+        overlay: 'rgba(18, 20, 23, 0.5)',
 
     },
     fonts: {

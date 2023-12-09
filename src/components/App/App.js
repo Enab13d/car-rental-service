@@ -1,5 +1,5 @@
 import { lazy } from "react";
-// import "./App.css";
+
 import { Routes, Route, Navigate } from "react-router-dom";
 import { SharedLayout } from "SharedLayout";
 
