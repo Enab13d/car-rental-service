@@ -4,7 +4,7 @@ import { theme } from "constants/theme";
 const Container = styled.div`
 margin-left: auto;
 margin-right: auto;
-padding-left: ${theme.sizing(12)};
+padding-left: ${theme.sizing(64)};
 
 `
 const Section = styled.section`

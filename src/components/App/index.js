@@ -1,6 +1,5 @@
-import {App, cld} from "./App";
+import {App} from "./App";
 
 export {
-    App,
-    cld 
+    App
 }
