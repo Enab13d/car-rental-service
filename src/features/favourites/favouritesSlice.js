@@ -11,7 +11,7 @@ const handleAddToFavourites = (state, action) => {
 
 const handleRemoveFromFavourites = (state, action) => {
   const idx = state.items.findIndex(
-    (vehicle) => (vehicle.id === action.payload.car.id)
+    (vehicle) => vehicle.id === action.payload.car.id
   );
   state.items.splice(idx, 1);
 };

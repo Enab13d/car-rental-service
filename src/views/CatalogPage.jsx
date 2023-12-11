@@ -1,17 +1,10 @@
 import { VehicleCatalog } from "components/VehicleCatalog";
 
-
-
-
-
 const CatalogPage = () => {
-
-    return (
-        <>
-<VehicleCatalog/>
-
-</>
-    )
-
-}
+  return (
+    <>
+      <VehicleCatalog />
+    </>
+  );
+};
 export default CatalogPage;

@@ -18,8 +18,6 @@ const handleRejected = (state, action) => {
   state.error = action.error.message;
 };
 
-
-
 const carsSlice = createSlice({
   name: "cars",
   initialState,

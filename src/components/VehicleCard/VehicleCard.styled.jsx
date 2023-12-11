@@ -1,7 +1,6 @@
 import styled from "@emotion/styled";
 import { theme } from "constants/theme";
 
-
 const CardWrapper = styled.li`
   width: 274px;
 `;
@@ -68,9 +67,9 @@ const CardButton = styled.button`
   }
 `;
 const AddToFavouritesBtn = styled.button`
-position: absolute;
-top: 14px;
-right: 14px;
+  position: absolute;
+  top: 14px;
+  right: 14px;
   display: block;
   color: white;
   background-color: transparent;
@@ -80,16 +79,16 @@ right: 14px;
 const HeartIcon = styled.svg`
   width: 18px;
   height: 18px;
-  fill: ${(props) => (props.liked ? theme.colors.btnBgHover : 'none')};
-  stroke: ${(props) => (props.liked ? theme.colors.btnBgHover : theme.colors.primaryWhite)};
+  fill: ${(props) => (props.liked ? theme.colors.btnBgHover : "none")};
+  stroke: ${(props) =>
+    props.liked ? theme.colors.btnBgHover : theme.colors.primaryWhite};
 
   &:hover,
   &:focus {
     fill: ${theme.colors.btnBgHover};
     stroke: ${theme.colors.btnBgHover};
   }
-
-`
+`;
 
 export {
   CardWrapper,
@@ -99,7 +98,7 @@ export {
   VehicleCardFeatures,
   FeaturesList,
   ImageThumb,
-    CardButton,
-    AddToFavouritesBtn,
-  HeartIcon
+  CardButton,
+  AddToFavouritesBtn,
+  HeartIcon,
 };
