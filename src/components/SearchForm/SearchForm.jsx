@@ -2,6 +2,7 @@ import { Filter, Field } from "./SearchForm.styled";
 import { CardButton } from "components/VehicleCard/VehicleCard.styled";
 import { useState } from "react";
 
+
 const SearchForm = () => {
   const [price, setPrice] = useState("null");
   const [name, setName] = useState("");
@@ -14,17 +15,23 @@ const SearchForm = () => {
     const { name, price, minMileage, maxMileage } = e.target.elements;
   };
 
+  const handleChange = e => {
+    e.preventDefault()
+    console.log(e.target.value);
+    setName(e.target.value)
+  }
+
   return (
-    <Filter>
+       <Filter>
       <label htmlFor="name">Car brand</label>
       <Field
         type="text"
         placeholder="Enter the text"
         id="name"
-        name="name"
+        name={name}
         value={name}
         autoComplete="off"
-        onChange={(e) => setName(e.target.value)}
+          onInput={handleChange}
       />
       <label htmlFor="price">Price/ 1 hour</label>
       <select id="price" value={price} onChange={e => setPrice(e.target.value)}>

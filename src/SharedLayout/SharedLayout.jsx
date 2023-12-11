@@ -1,26 +1,30 @@
 import { Suspense } from "react";
 import { Outlet } from "react-router-dom";
-import { Header, Footer, Container } from "./SharedLayout.styled";
-import Nav from "react-bootstrap/Nav";
-import Navbar from "react-bootstrap/Navbar";
+import {
+  Header,
+  Footer,
+  Container,
+  NavWrapper,
+  StyledLink,
+  FlexContainer,
+  Logo,
+} from "./SharedLayout.styled";
 import { NavLink } from "react-router-dom";
 
 const SharedLayout = () => {
   return (
     <>
       <Header>
-        <Navbar>
-          <Container>
-            <Navbar.Brand>CAR-RENTAL</Navbar.Brand>
-            <Navbar.Collapse id="basic-navbar-nav">
-              <Nav>
-                <NavLink to="/">Home</NavLink>
-                <NavLink to="/catalog">Catalogue</NavLink>
-                <NavLink to="/favorites">Favourites</NavLink>
-              </Nav>
-            </Navbar.Collapse>
-          </Container>
-        </Navbar>
+        <Container>
+          <FlexContainer>
+             <Logo>Car Rental Service</Logo>
+          <NavWrapper>
+            <StyledLink to="/">Home</StyledLink>
+            <StyledLink to="/catalog">Catalogue</StyledLink>
+            <StyledLink to="/favorites">Favourites</StyledLink>
+          </NavWrapper>
+         </FlexContainer>
+        </Container>
       </Header>
       <Container>
         <main>

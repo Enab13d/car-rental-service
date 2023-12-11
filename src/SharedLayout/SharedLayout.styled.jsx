@@ -1,6 +1,6 @@
 import styled from "@emotion/styled";
 import { theme } from "constants/theme";
-
+import { NavLink } from "react-router-dom";
 const Container = styled.div`
   margin-left: auto;
   margin-right: auto;
@@ -17,7 +17,7 @@ const Header = styled.header`
   width: 100%;
   padding-top: ${theme.sizing(8)};
   padding-bottom: ${theme.sizing(8)};
-  background-color: ${theme.colors.textDarkGray};
+  background-color: ${theme.colors.textPrimarySemiTransparent};
   margin-bottom: 150px;
 `;
 const Footer = styled.footer`
@@ -27,4 +27,33 @@ const Footer = styled.footer`
   background-color: ${theme.colors.textDarkGray};
 `;
 
-export { Container, Section, Header, Footer };
+const NavWrapper = styled.nav`
+display: flex;
+column-gap: ${theme.sizing(3)};
+`
+const StyledLink = styled(NavLink)`
+color: ${theme.colors.primaryWhite};
+font-size: ${theme.sizing(10)};
+text-decoration: none;
+font: Montserrat;
+font-weight: 600;
+transition: color ${theme.animation.duration} ${theme.animation.timingFunction};
+
+&:hover,
+&:focus {
+  color: ${theme.colors.textDarkGray};
+}
+`
+const FlexContainer = styled.div`
+display: flex;
+justify-content: space-between;
+align-items: center;
+`
+const Logo = styled.h1`
+color: ${theme.colors.primaryWhite};
+font-weight: 400;
+font-size: ${theme.sizing(18)}
+
+
+`
+export { Container, Section, Header, Footer, NavWrapper, StyledLink, FlexContainer , Logo};
