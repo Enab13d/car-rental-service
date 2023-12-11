@@ -4,7 +4,7 @@ import { getAllCars, getCarById } from "./operations";
 
 const initialState = {
   items: [],
-  selectedItem: null,
+  selectedItems: [],
   isLoading: false,
   error: null,
 };
