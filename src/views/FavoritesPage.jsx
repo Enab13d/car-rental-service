@@ -1,5 +1,10 @@
+import { VehicleCatalog } from "components/VehicleCatalog";
+
+
 const FavoritesPage = () => {
 
-}
 
-export default FavoritesPage
+  return <><VehicleCatalog/></>;
+};
+
+export default FavoritesPage;

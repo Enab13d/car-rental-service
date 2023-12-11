@@ -26,15 +26,17 @@ const SharedLayout = () => {
 
 
       </Header>
-
+      <Container>
       <main>
-<Container>
+
 <Suspense fallback="loading...">
           <Outlet />
         </Suspense>
-</Container>
+
       </main>
-      <Footer>FOOTER</Footer>
+      </Container>
+      <Footer><Container>
+      FOOTER</Container></Footer>
     </>
   );
 };

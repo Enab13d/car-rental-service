@@ -1,8 +1,5 @@
 const theme = {
-    animation: {
-    timingFunction: 'cubic-bezier(0.4, 0, 0.2, 1)',
-    duration: '300ms',
-  },
+
     colors: {
         lightBlue: '#3470FF',
         btnBgHover: '#0B44CD',

@@ -3,9 +3,15 @@ import { createAsyncThunk } from "@reduxjs/toolkit";
 
 axios.defaults.baseURL = "https://65706e0809586eff66415ca1.mockapi.io";
 
-const getAllCars = createAsyncThunk("cars/getAllCars", async (_, thunkAPI) => {
+
+const createSearchParams = ({page, limit}) => new URLSearchParams({page, limit}).toString();
+
+
+
+const getAllCars = createAsyncThunk("cars/getAllCars", async (params, thunkAPI) => {
+  const p = createSearchParams(params);
   try {
-    const res = axios.get("/advert?signature=tU_6PVgI9ANAXx0NWGmx8DGXWvE");
+    const res = axios.get(`/advert?${p}`);
     return res;
   } catch (err) {
     thunkAPI.rejectWithValue(err.message);
@@ -22,6 +28,10 @@ const getCarById = createAsyncThunk(
    }
   }
 )
+
+
+
+
 
 export {
     getAllCars,

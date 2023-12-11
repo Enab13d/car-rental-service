@@ -4,8 +4,9 @@ import { theme } from "constants/theme";
 const Container = styled.div`
 margin-left: auto;
 margin-right: auto;
-padding-left: ${theme.sizing(64)};
-
+max-width: 1440px;
+padding-left: 128px;
+padding-right: 128px;
 `
 const Section = styled.section`
 margin-left: auto;
@@ -17,7 +18,8 @@ const Header = styled.header`
 width: 100%;
 padding-top: ${theme.sizing(8)};
 padding-bottom: ${theme.sizing(8)};
-background-color: ${theme.colors.textDarkGray}
+background-color: ${theme.colors.textDarkGray};
+margin-bottom: 150px;
 `
 const Footer = styled.footer`
 width: 100%;

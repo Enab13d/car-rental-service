@@ -1,6 +1,7 @@
 import styled from "@emotion/styled";
 import { theme } from "constants/theme";
 
+
 const CardWrapper = styled.li`
   width: 274px;
 `;
@@ -79,8 +80,8 @@ right: 14px;
 const HeartIcon = styled.svg`
   width: 18px;
   height: 18px;
-  fill: none;
-  stroke: ${theme.colors.primaryWhite};
+  fill: ${(props) => (props.liked ? theme.colors.btnBgHover : 'none')};
+  stroke: ${(props) => (props.liked ? theme.colors.btnBgHover : theme.colors.primaryWhite)};
 
   &:hover,
   &:focus {

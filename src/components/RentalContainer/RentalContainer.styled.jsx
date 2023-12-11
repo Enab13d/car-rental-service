@@ -1,6 +1,6 @@
 import styled from "@emotion/styled";
 import { theme } from "constants/theme";
-import { CardButton, FeaturesList } from "components/VehicleCard/VehicleCard.styled";
+import { FeaturesList } from "components/VehicleCard/VehicleCard.styled";
 
 const Wrapper = styled.div`
   width: 541px;
@@ -61,11 +61,28 @@ const CategorySubtitle = styled.h3`
   color: ${theme.colors.textPrimaryBlack};
   padding-bottom: ${theme.sizing(4)};
 `;
-const RentalBtn = styled(CardButton)`
+
+const RentalBtn = styled.a`
+display: block;
+text-decoration: none;
+background-color: ${theme.colors.lightBlue};
+padding-top: ${theme.sizing(6)};
+padding-bottom: ${theme.sizing(6)};
+border: none;
+border-radius: 12px;
+color: ${theme.colors.primaryWhite};
+font-weight: 600;
+font-size: 14px;
+line-height: 20px;
+transition: background-color ${theme.animation.duration}
+  ${theme.animation.timingFunction};
+&:hover,
+&:focus {
+  background-color: ${theme.colors.btnBgHover};
+}
 width: 168px;
 padding: 12px 50px;
 `
-
 const RentalList = styled(FeaturesList)`
 margin-bottom: 0;
 `

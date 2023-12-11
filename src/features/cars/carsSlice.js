@@ -1,6 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { getAllCars, getCarById } from "./operations";
 
+
 const initialState = {
   items: [],
   selectedItem: null,
@@ -17,6 +18,8 @@ const handleRejected = (state, action) => {
   state.error = action.error.message;
 };
 
+
+
 const carsSlice = createSlice({
   name: "cars",
   initialState,
@@ -24,7 +27,7 @@ const carsSlice = createSlice({
     builder
       .addCase(getAllCars.pending, handlePending)
       .addCase(getAllCars.fulfilled, (state, action) => {
-        state.items = action.payload.data;
+        state.items.push(...action.payload.data);
         state.isLoading = false;
       })
       .addCase(getAllCars.rejected, handleRejected).addCase(
