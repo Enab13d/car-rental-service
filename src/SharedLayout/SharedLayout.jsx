@@ -9,7 +9,6 @@ import {
   FlexContainer,
   Logo,
 } from "./SharedLayout.styled";
-import { NavLink } from "react-router-dom";
 
 const SharedLayout = () => {
   return (
