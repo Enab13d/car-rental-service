@@ -17,7 +17,6 @@ const SearchForm = () => {
 
   const handleChange = e => {
     e.preventDefault()
-    console.log(e.target.value);
     setName(e.target.value)
   }
 

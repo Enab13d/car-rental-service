@@ -10,15 +10,16 @@ import { persistStore, persistReducer,  FLUSH,
 import storage from "redux-persist/lib/storage";
 
 const favouritesPersistConfig = {
-    key: 'favourites',
+    key: 'items',
     storage
 }
+const favouritesPersistReducer = persistReducer(favouritesPersistConfig, favouritesSliceReducer)
 
 const store = configureStore(
     {
         reducer: {
             cars: carsSliceReducer,
-            favourites: persistReducer(favouritesPersistConfig, favouritesSliceReducer),
+            favourites: favouritesPersistReducer,
         },
         middleware: (getDefaultMiddleware) => getDefaultMiddleware({
             serializableCheck: false,
