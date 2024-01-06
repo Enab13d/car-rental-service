@@ -5,16 +5,16 @@ const Overlay = styled.div`
 position: fixed;
 top: 0;
 left: 0;
-width: ${(props) => (props.expanded ? '100%' : '0%')};
-height: ${(props) => (props.expanded ? '100%' : '0%')};
-display:${(props) => (props.expanded ? "flex" : "none")};
+width: 100vw;
+height: 100vh;
+display: flex;
 justify-content: center;
 align-items: center;
 background-color: ${theme.colors.overlay};
-z-index: ${(props) => (props.expanded ? 1200 : -1)};
+z-index: 1200;
 pointer-events: ${(props) => (props.expanded ? 'auto': "none")};
-overflow: hidden;
-visibility: ${(props) => (props.expanded ? 'visible' : 'hidden')};
+
+
 opacity: ${(props) => (props.expanded ? 1 : 0)};
 transition: opacity ${theme.animation.duration} ${theme.animation.timingFunction};
 
@@ -23,6 +23,7 @@ div {
     transition: transform ${theme.animation.duration} ${theme.animation.timingFunction}
 }
 `
+
 const ModalWindow = styled.div`
 
 `
