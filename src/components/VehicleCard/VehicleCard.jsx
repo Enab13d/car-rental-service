@@ -47,7 +47,7 @@ const VehicleCard = ({ props }) => {
 
   const onModalClose = (e) => {
     e.preventDefault();
-    if (e.key === "Escape") {
+    if (e.key === "Escape" || e.target.id === "overlay") {
       hideModal();
     }
   };

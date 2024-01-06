@@ -10,11 +10,13 @@ import { persistor } from "components/App/store";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
-    <Provider store={store}>
+<React.StrictMode>
+<Provider store={store}>
       <PersistGate persistor={persistor}>
         <BrowserRouter basename="/car-rental-service">
           <App />
         </BrowserRouter>
       </PersistGate>
     </Provider>
+</React.StrictMode>
 );
