@@ -7,12 +7,16 @@
 
       const { onModalClose, expanded } = props;
       useEffect(() => {
-        window.addEventListener("keydown", onModalClose);
+        if (expanded) {
+          window.addEventListener("keydown", onModalClose);
+        }
 
         return () => {
           window.removeEventListener("keydown", onModalClose);
         };
-      }, [onModalClose]);
+      }, [onModalClose, expanded]);
+
+      
 
       return ReactDOM.createPortal(
         <Overlay expanded={expanded} id="overlay" onClick={onModalClose}>
