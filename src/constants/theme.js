@@ -11,6 +11,8 @@ const theme = {
     inputBg: "rgba(247, 247, 251, 1)",
     inputInnerBorder: "rgba(138, 138, 137, 0.2)",
     overlay: "rgba(18, 20, 23, 0.5)",
+    dropDownBg: "rgba(255, 255, 255, 1)",
+    arrowIcon: "rgba(18, 20, 23, 1)",
   },
   fonts: {
     primary: "Manrope",

@@ -1,9 +1,13 @@
 import { Filter, Field, FormWrapper, Select, FieldWrapper } from "./SearchForm.styled";
 import { CardButton } from "components/VehicleCard/VehicleCard.styled";
+import {
+    DropDownContainer, DropDownHeader, DropDownListContainer, DropDownList, ListItem, ExpandDropdownBtn, DropdownIcon
+} from './Dropdown.styled'
 import { useState } from "react";
 import { makes, prices } from "assets/makes";
-
+import sprite from "../../constants/icons/symbol-defs.svg";
 const SearchForm = () => {
+  const [isOpen, setIsOpen] = useState(false);
   const [price, setPrice] = useState("");
   const [make, setMake] = useState("");
   const [minMileage, setMinMileage] = useState("");
@@ -18,16 +22,32 @@ const SearchForm = () => {
     e.preventDefault();
     setMake(e.target.value);
   };
+  const toggle = (e) => {
+    e.preventDefault()
+    setIsOpen(!isOpen);
+  }
 
   return (
     <FormWrapper>
       <Filter>
-        <label htmlFor="make">Car brand</label>
-        <Select id="make" name={make} onChange={handleChange} value={make}>
+        <DropDownContainer>
+          <ExpandDropdownBtn onClick={toggle}>
+            <DropdownIcon>
+              {!isOpen && <use href={sprite + "#icon-chevron-down"}></use>}
+              {isOpen && <use href={sprite + "#icon-chevron-up"}></use>}
+            </DropdownIcon>
+          </ExpandDropdownBtn>
+          <DropDownHeader>Car Brand</DropDownHeader>
+          {isOpen && <DropDownListContainer>
+            <DropDownList>
+
           {makes.map((make) => (
-            <option value={make}>{make}</option>
+            <ListItem>{make}</ListItem>
           ))}
-        </Select>
+
+            </DropDownList>
+          </DropDownListContainer>}
+</DropDownContainer>
 
         <label htmlFor="price">Price/ 1 hour</label>
         <Select

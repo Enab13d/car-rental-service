@@ -32,6 +32,7 @@ background-color: ${theme.colors.inputBg};
 
 border-radius: ${(props) => props.left ? "14px 0px 0px 14px" : "0px 14px 14px 0px"};
 `
+
 export {
     Filter,
     Field,
