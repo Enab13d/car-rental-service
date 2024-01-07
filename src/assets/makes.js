@@ -23,7 +23,7 @@ const makes = [
   "Land"
 ];
 
-const prices = [30, 40, 50, 60, 70, 80];
+const prices = [30, 40, 50, 60, 70, 80, 90, 100, 110, 120];
 
 export {
   makes, prices
