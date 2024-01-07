@@ -45,10 +45,10 @@ const DropDownList = styled.ul`
   transition: transform ${theme.animation.duration}
     ${theme.animation.timingFunction};
 
-  & :first-child {
+  & :first-of-type {
     padding-top: ${theme.sizing(9)};
   }
-  & :not(:last-child) {
+  & :not(:last-of-type) {
     margin-bottom: ${theme.sizing(4)};
   }
 `;
@@ -69,7 +69,7 @@ const ExpandDropdownBtn = styled.button`
   padding: 0;
   transition: transform ${theme.animation.duration}
     ${theme.animation.timingFunction};
-  transform: ${(props) => (props.rotate ? "rotate(180deg)" : "rotate(0)")};
+  transform: ${(props) => (props.turnOver ? "rotate(180deg)" : "rotate(0)")};
 `;
 const DropdownIcon = styled(SlArrowDown)`
   width: 20px;

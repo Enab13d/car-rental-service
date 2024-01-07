@@ -2,10 +2,8 @@ import styled from "@emotion/styled"
 import { theme } from "constants/theme"
 
 
-const FormWrapper = styled.form`
+const FormWrapper = styled.div`
 margin-bottom: ${theme.sizing(25)};
-
-
 `
 
 const Filter = styled.form`

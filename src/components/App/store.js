@@ -1,6 +1,7 @@
 import { configureStore } from "@reduxjs/toolkit";
 import carsSliceReducer from "features/cars/carsSlice";
 import favouritesSliceReducer from "features/favourites/favouritesSlice";
+import fitlerSliceReducer from "features/filter/fitlerSlice";
 import { persistStore, persistReducer,  FLUSH,
     REHYDRATE,
     PAUSE,
@@ -20,6 +21,7 @@ const store = configureStore(
         reducer: {
             cars: carsSliceReducer,
             favourites: favouritesPersistReducer,
+            filter: fitlerSliceReducer,
         },
         middleware: (getDefaultMiddleware) => getDefaultMiddleware({
             serializableCheck: false,
