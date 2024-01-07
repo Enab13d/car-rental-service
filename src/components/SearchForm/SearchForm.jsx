@@ -1,7 +1,7 @@
 import { Filter, Field, FormWrapper, Select, FieldWrapper } from "./SearchForm.styled";
 import { CardButton } from "components/VehicleCard/VehicleCard.styled";
 import {
-    DropDownContainer, DropDownHeader, DropDownListContainer, DropDownList, ListItem, ExpandDropdownBtn, DropdownIcon
+    DropDownContainer, DropDownInput, DropDownListContainer, DropDownList, ListItem, ExpandDropdownBtn, DropdownIcon
 } from './Dropdown.styled'
 import { useState } from "react";
 import { makes, prices } from "assets/makes";
@@ -30,26 +30,47 @@ const SearchForm = () => {
   return (
     <FormWrapper>
       <Filter>
-        <DropDownContainer>
-          <ExpandDropdownBtn onClick={toggle}>
-            <DropdownIcon>
-              {!isOpen && <use href={sprite + "#icon-chevron-down"}></use>}
-              {isOpen && <use href={sprite + "#icon-chevron-up"}></use>}
-            </DropdownIcon>
+        <div>
+          <label htmlFor="make">Car Brand</label>
+        <DropDownContainer >
+          <ExpandDropdownBtn onClick={toggle} rotate={isOpen}>
+            <DropdownIcon/>
           </ExpandDropdownBtn>
-          <DropDownHeader>Car Brand</DropDownHeader>
-          {isOpen && <DropDownListContainer>
-            <DropDownList>
+          <DropDownInput placeholder="Enter the text" name="make" id="make"/>
+          <DropDownListContainer expand={isOpen}>
+              <DropDownList expand={isOpen}>
 
           {makes.map((make) => (
             <ListItem>{make}</ListItem>
           ))}
 
             </DropDownList>
-          </DropDownListContainer>}
+          </DropDownListContainer>
 </DropDownContainer>
+        </div>
+<div>
+          <label>Price/ 1 hour</label>
+        <DropDownContainer>
+          <ExpandDropdownBtn onClick={toggle} rotate={isOpen}>
+            <DropdownIcon/>
+          </ExpandDropdownBtn>
+          <DropDownInput placeholder="To $" name="make" id="make"/>
+          <DropDownListContainer expand={isOpen}>
+            <DropDownList expand={isOpen}>
 
-        <label htmlFor="price">Price/ 1 hour</label>
+          {prices.map((price) => (
+            <ListItem>{price}</ListItem>
+          ))}
+
+            </DropDownList>
+          </DropDownListContainer>
+</DropDownContainer>
+        </div>
+        
+
+
+
+        {/* <label htmlFor="price">Price/ 1 hour</label>
         <Select
           id="price"
           value={price}
@@ -58,8 +79,9 @@ const SearchForm = () => {
           {prices.map((price) => (
             <option value={price}>{price}</option>
           ))}
-        </Select>
-        <label>Сar mileage / km</label>
+        </Select> */}
+        <div>
+          <label>Сar mileage / km</label>
         <FieldWrapper>
           <Field
             left
@@ -77,6 +99,7 @@ const SearchForm = () => {
             value={maxMileage}
           />
         </FieldWrapper>
+        </div>
         <CardButton type="submit">Search</CardButton>
       </Filter>
     </FormWrapper>

@@ -23,9 +23,9 @@ align-items: center;
 
 const Field = styled.input`
 height: ${theme.sizing(24)};
-padding-top: ${theme.sizing(14)};
-padding-left: ${theme.sizing(12)};
-padding-bottom: ${theme.sizing(14)};
+padding-top: ${theme.sizing(7)};
+padding-left: ${theme.sizing(9)};
+padding-bottom: ${theme.sizing(7)};
 border: none;
 border-right: ${(props) => props.left ? `1px solid ${theme.colors.inputInnerBorder}`: "none"};
 background-color: ${theme.colors.inputBg};
