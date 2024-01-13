@@ -6,19 +6,25 @@ axios.defaults.baseURL = "https://65706e0809586eff66415ca1.mockapi.io";
 const getFilteredCars = createAsyncThunk(
   "filter/getFilteredCars",
   async (
-    { price = 150, make = null, minMileage = null, maxMileage = null },
+    { price, make, minMileage, maxMileage },
     thunkAPI
   ) => {
     try {
-      const response = await axios.get(`/advert`);
-
-      const result = response.data.filter(
-        (c) =>
-          c.make.toLowerCase() === make.toLowerCase() &&
-          c.rentalPrice <= price &&
-          c.mileage >= minMileage &&
-          c.mileage <= maxMileage
-      );
+      let response;
+      if (!make) {
+        response = await axios.get(`/advert`);
+      }
+      response = await axios.get(`/advert?make=${make}`);
+      let result = response.data;
+      if (price) {
+        result = result.filter((c) => Number(c.rentalPrice.slice(1)) <= Number(price))
+      }
+      if (minMileage) {
+        result = result.filter((c) => c.mileage.slice(1) >= minMileage)
+}
+      if (maxMileage) {
+        result = result.filter((c) => c.mileage <= maxMileage)
+      }
 
         return result;
     } catch (err) {
@@ -27,4 +33,7 @@ const getFilteredCars = createAsyncThunk(
   }
 );
 
+
+
 export { getFilteredCars };
+

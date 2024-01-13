@@ -6,7 +6,7 @@ import {
   selectCarsLength,
   selectCars,
 } from "features/cars/selectors";
-
+import { selectFilteredCars } from "features/filter/selectors";
 import { Catalogue } from "./VehicleCatalog.styled";
 import { nanoid } from "nanoid";
 import { useLocation } from "react-router-dom";
@@ -22,6 +22,7 @@ const VehicleCatalog = () => {
   const error = useSelector(selectError);
   const allCars = useSelector(selectCars);
   const favourites = useSelector(selectFavourites);
+  const filtered = useSelector(selectFilteredCars)
 
   const [page, setPage] = useState(1);
   const total = useSelector(selectCarsLength);
@@ -47,7 +48,13 @@ const VehicleCatalog = () => {
   const loadMore = () => {
     setPage((prevPage) => prevPage + 1);
   };
-  let cars = location.pathname === "/catalog" ? allCars : favourites;
+  let cars = allCars;
+  if (filtered.length) {
+    cars = filtered;
+  }
+  if (location.pathname === "/favorites") {
+    cars = favourites;
+  }
   const shouldRender = !isLoading && !error && cars.length !==0;
 
 

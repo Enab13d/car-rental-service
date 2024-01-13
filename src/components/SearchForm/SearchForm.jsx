@@ -32,7 +32,6 @@ const SearchForm = () => {
 
   const handleSumbit = (e) => {
     e.preventDefault();
-    console.log(e)
     dispatch(getFilteredCars({price, make, minMileage, maxMileage}))
 
   };
