@@ -16,6 +16,7 @@ const CloseBtn = styled.button`
   display: block;
   background-color: transparent;
   border: none;
+    cursor: pointer;
 `;
 const CloseIcon = styled.svg`
   width: 24px;

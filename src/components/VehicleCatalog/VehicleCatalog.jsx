@@ -8,7 +8,6 @@ import {
 } from "features/cars/selectors";
 import { selectFilteredCars } from "features/filter/selectors";
 import { Catalogue } from "./VehicleCatalog.styled";
-import { nanoid } from "nanoid";
 import { useLocation } from "react-router-dom";
 import { selectFavourites } from "features/favourites/selectors";
 import { useState, useRef, useEffect } from "react";
@@ -63,7 +62,7 @@ const VehicleCatalog = () => {
 
       {shouldRender && <Catalogue>
         {cars.map((car) => (
-          <VehicleCard key={nanoid()} props={car} />
+          <VehicleCard key={car.id} props={car} />
         ))}
       </Catalogue>}
       {!shouldRender && location.pathname === "/favorites" && <h2>Favourites list is empty yet</h2>}

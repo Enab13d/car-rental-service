@@ -1,9 +1,11 @@
 import { Section } from "SharedLayout/SharedLayout.styled";
-
+import { HeroContainter, StyledTitle } from "./HomePage.styled";
 const HomePage = () => {
   return (
     <Section>
-      <h1>Home Page</h1>
+      <HeroContainter>
+        <StyledTitle>Welcome to Car Rental service</StyledTitle>
+</HeroContainter>
     </Section>
   );
 };

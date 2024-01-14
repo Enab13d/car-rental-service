@@ -18,7 +18,7 @@ const Header = styled.header`
   padding-top: ${theme.sizing(8)};
   padding-bottom: ${theme.sizing(8)};
   background-color: ${theme.colors.textPrimarySemiTransparent};
-  margin-bottom: 150px;
+
 `;
 const Footer = styled.footer`
   width: 100%;
@@ -35,7 +35,7 @@ const StyledLink = styled(NavLink)`
 color: ${theme.colors.primaryWhite};
 font-size: ${theme.sizing(10)};
 text-decoration: none;
-font: Montserrat;
+font-family: Montserrat;
 font-weight: 600;
 transition: color ${theme.animation.duration} ${theme.animation.timingFunction};
 

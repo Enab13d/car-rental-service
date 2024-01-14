@@ -3,8 +3,10 @@ import {
   Field,
   FormWrapper,
   FieldWrapper,
+  SearchBtn,
+  StyledLabel,
 } from "./SearchForm.styled";
-import { CardButton } from "components/VehicleCard/VehicleCard.styled";
+
 import {
   DropDownContainer,
   DropDownInput,
@@ -29,11 +31,9 @@ const SearchForm = () => {
   const [maxMileage, setMaxMileage] = useState("");
   const dispatch = useDispatch();
 
-
   const handleSumbit = (e) => {
     e.preventDefault();
-    dispatch(getFilteredCars({price, make, minMileage, maxMileage}))
-
+    dispatch(getFilteredCars({ price, make, minMileage, maxMileage }));
   };
   const toggleMakeDropdown = (e) => {
     e.preventDefault();
@@ -46,18 +46,17 @@ const SearchForm = () => {
 
   const handleClick = (e, type) => {
     e.preventDefault();
-    type === "make" ? setMake(e.target.textContent) : setPrice(e.target.textContent);
+    type === "make"
+      ? setMake(e.target.textContent)
+      : setPrice(e.target.textContent);
     type === "make" ? toggleMakeDropdown(e) : togglePriceDropdown(e);
-
-  }
-
-
+  };
 
   return (
     <FormWrapper>
       <Filter onSubmit={handleSumbit}>
         <div>
-          <label htmlFor="make">Car Brand</label>
+          <StyledLabel htmlFor="make">Car Brand</StyledLabel>
           <DropDownContainer>
             <ExpandDropdownBtn
               onClick={toggleMakeDropdown}
@@ -65,18 +64,30 @@ const SearchForm = () => {
             >
               <DropdownIcon />
             </ExpandDropdownBtn>
-            <DropDownInput placeholder="Enter the text" name="make" id="make" value={make} onChange={e => setMake(e.target.value)}/>
+            <DropDownInput
+              placeholder="Enter the text"
+              name="make"
+              id="make"
+              value={make}
+              onChange={(e) => setMake(e.target.value)}
+              autoComplete="off"
+            />
             <DropDownListContainer expand={makeDropdownOpened}>
               <DropDownList expand={makeDropdownOpened}>
                 {makes.map((make) => (
-                  <ListItem key={nanoid()} onClick={e => handleClick(e, "make")}>{make}</ListItem>
+                  <ListItem
+                    key={nanoid()}
+                    onClick={(e) => handleClick(e, "make")}
+                  >
+                    {make}
+                  </ListItem>
                 ))}
               </DropDownList>
             </DropDownListContainer>
           </DropDownContainer>
         </div>
         <div>
-          <label htmlFor="price">Price/ 1 hour</label>
+          <StyledLabel htmlFor="price">Price/ 1 hour</StyledLabel>
           <DropDownContainer>
             <ExpandDropdownBtn
               onClick={togglePriceDropdown}
@@ -84,11 +95,23 @@ const SearchForm = () => {
             >
               <DropdownIcon />
             </ExpandDropdownBtn>
-            <DropDownInput placeholder="To $" name="price" id="price" value={price} onChange={e => setPrice(e.target.value)}/>
+            <DropDownInput
+              placeholder="To $"
+              name="price"
+              id="price"
+              value={price}
+              onChange={(e) => setPrice(e.target.value)}
+              autoComplete="off"
+            />
             <DropDownListContainer expand={priceDropdownOpened}>
               <DropDownList expand={priceDropdownOpened}>
                 {prices.map((price) => (
-                  <ListItem key={nanoid()} onClick={e => handleClick(e, "price")}>{price}</ListItem>
+                  <ListItem
+                    key={nanoid()}
+                    onClick={(e) => handleClick(e, "price")}
+                  >
+                    {price}
+                  </ListItem>
                 ))}
               </DropDownList>
             </DropDownListContainer>
@@ -96,7 +119,7 @@ const SearchForm = () => {
         </div>
 
         <div>
-          <label>Сar mileage / km</label>
+          <StyledLabel>Сar mileage / km</StyledLabel>
           <FieldWrapper>
             <Field
               left
@@ -105,6 +128,7 @@ const SearchForm = () => {
               name="minMileage"
               onChange={(e) => setMinMileage(e.target.value)}
               value={minMileage}
+              autoComplete="off"
             />
             <Field
               type="text"
@@ -112,10 +136,11 @@ const SearchForm = () => {
               name="maxMileage"
               onChange={(e) => setMaxMileage(e.target.value)}
               value={maxMileage}
+              autoComplete="off"
             />
           </FieldWrapper>
         </div>
-        <CardButton type="submit">Search</CardButton>
+        <SearchBtn type="submit">Search</SearchBtn>
       </Filter>
     </FormWrapper>
   );

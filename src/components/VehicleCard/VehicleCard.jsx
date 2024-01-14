@@ -17,6 +17,7 @@ import {
   CardButton,
   AddToFavouritesBtn,
   HeartIcon,
+  TitleWrapper,
 } from "./VehicleCard.styled";
 import sprite from "../../constants/icons/symbol-defs.svg";
 import { Modal } from "components/Modal";
@@ -85,10 +86,12 @@ cars.length && (<>
       </HeartIcon>
     </AddToFavouritesBtn>
   </ImageThumb>
-  <VehicleCardTitle>
+        <TitleWrapper>
+            <VehicleCardTitle>
     {make} <VehicleCardSpan>{model}</VehicleCardSpan>, {year}
   </VehicleCardTitle>
   <VehicleCardTitle>{rentalPrice}</VehicleCardTitle>
+</TitleWrapper>
   <FeaturesList>
     <li>
       <VehicleCardFeatures>{address}</VehicleCardFeatures>
