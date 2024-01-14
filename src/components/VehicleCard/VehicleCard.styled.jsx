@@ -50,6 +50,7 @@ const VehicleCardFeatures = styled.p`
 const CardButton = styled.button`
   display: block;
   width: 100%;
+  cursor: pointer;
   background-color: ${theme.colors.lightBlue};
   padding-top: ${theme.sizing(6)};
   padding-bottom: ${theme.sizing(6)};
@@ -74,6 +75,7 @@ const AddToFavouritesBtn = styled.button`
   color: white;
   background-color: transparent;
   border: none;
+  cursor: pointer;
 `;
 
 const HeartIcon = styled.svg`
@@ -89,7 +91,10 @@ const HeartIcon = styled.svg`
     stroke: ${theme.colors.btnBgHover};
   }
 `;
-
+const TitleWrapper = styled.div`
+display: flex;
+justify-content: space-between;
+`
 export {
   CardWrapper,
   VehiclePreview,
@@ -101,4 +106,5 @@ export {
   CardButton,
   AddToFavouritesBtn,
   HeartIcon,
+  TitleWrapper
 };

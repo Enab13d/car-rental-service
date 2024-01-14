@@ -10,6 +10,7 @@ const theme = {
     textDarkGray: "rgba(18, 20, 23, 0.5)",
     inputBg: "rgba(247, 247, 251, 1)",
     inputInnerBorder: "rgba(138, 138, 137, 0.2)",
+    labelGrey: 'rgba(138, 138, 137, 1)',
     overlay: "rgba(18, 20, 23, 0.5)",
     dropDownBg: "rgba(255, 255, 255, 1)",
     dropDownBorder: "rgba(18, 20, 23, 0.05)",

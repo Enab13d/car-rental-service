@@ -18,6 +18,10 @@ const DropDownInput = styled.input`
   margin-bottom: ${theme.sizing(2)};
   border-radius: 14px;
   border: none;
+  font-weight: 500;
+font-size: 18px;
+line-height: 20px;
+color: ${theme.colors.arrowIcon};
 `;
 const DropDownListContainer = styled.div`
   width: ${theme.sizing(122)};
@@ -62,7 +66,7 @@ const ExpandDropdownBtn = styled.button`
   right: ${theme.sizing(9)};
   width: 20px;
   height: 20px;
-
+  cursor: pointer;
   display: block;
   background-color: transparent;
   border: none;
