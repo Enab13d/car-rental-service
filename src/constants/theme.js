@@ -15,6 +15,12 @@ const theme = {
     dropDownBg: "rgba(255, 255, 255, 1)",
     dropDownBorder: "rgba(18, 20, 23, 0.05)",
     arrowIcon: "rgba(18, 20, 23, 1)",
+    navText: "#fff",
+    header: "rgba(18, 20, 23, 0.5)",
+    navLinkHover: "rgba(18, 20, 23, 0.5)",
+    persistentWhite: "#fff",
+    rentalFeaturesText: "rgba(18, 20, 23, 0.5)",
+    priceSpan: "#3470FF",
   },
   fonts: {
     primary: "Manrope",
@@ -30,4 +36,42 @@ const theme = {
   sizing: (value) => `${value * 2}px`,
 };
 
-export { theme };
+const darkTheme = {
+ colors: {
+    lightBlue: "#3470FF",
+    btnBgHover: "#0B44CD",
+    primaryWhite: "black",
+    conditionBg: "rgb(111, 115, 112)",
+    textPrimaryBlack: "white",
+    textPrimarySemiTransparent: "white",
+    textLightGray: "rgba(18, 20, 23, 0.2)",
+    textDarkGray: "white",
+    inputBg: "rgb(111, 115, 112)",
+    inputInnerBorder: "rgba(138, 138, 137, 0.2)",
+    labelGrey: 'rgba(138, 138, 137, 1)',
+    overlay: "rgba(18, 20, 23, 0.5)",
+    dropDownBg: "rgb(111, 115, 112)",
+    dropDownBorder: "rgba(18, 20, 23, 0.05)",
+    arrowIcon: "rgba(18, 20, 23, 1)",
+    navText: "white",
+    header: 'black',
+    navLinkHover: "red",
+    persistentWhite: "#fff",
+    rentalFeaturesText: "white",
+    priceSpan: "white",
+  },
+  fonts: {
+    primary: "Manrope",
+    secondary: "Montserrat",
+  },
+  fontSizes: {
+    vehicleCardTitle: "16px",
+  },
+  animation: {
+    timingFunction: "cubic-bezier(0.4, 0, 0.2, 1)",
+    duration: "300ms",
+  },
+  sizing: (value) => `${value * 2}px`,
+};
+
+export { theme, darkTheme };

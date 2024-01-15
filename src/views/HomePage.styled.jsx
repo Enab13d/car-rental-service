@@ -1,6 +1,6 @@
 import styled from "@emotion/styled";
 import backgroundImg from "../assets/images/pexels-mike-bird-1035108-min.jpg"
-import { theme } from "constants/theme";
+
 
 const HeroContainter = styled.div`
 background-image: linear-gradient(
@@ -17,7 +17,7 @@ justify-content: center;
 align-items: center;
 `
 const StyledTitle = styled.h1`
-color: ${theme.colors.primaryWhite};
+color: ${props => props.theme.colors.primaryWhite};
 font-size: 60px;
 font-weight: 600;
 

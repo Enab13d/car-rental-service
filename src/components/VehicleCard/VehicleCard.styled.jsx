@@ -1,5 +1,5 @@
 import styled from "@emotion/styled";
-import { theme } from "constants/theme";
+
 
 const CardWrapper = styled.li`
   width: 274px;
@@ -24,8 +24,8 @@ const ImageThumb = styled.div`
 
 const VehiclePreview = styled.img`
   object-fit: cover;
-  transition: transform ${theme.animation.duration}
-    ${theme.animation.timingFunction};
+  transition: transform ${props => props.theme.animation.duration}
+    ${props => props.theme.animation.timingFunction};
 
   &:hover {
     transform: scale(1.1);
@@ -34,16 +34,16 @@ const VehiclePreview = styled.img`
 const VehicleCardTitle = styled.h2`
 font-size: 16px;
 font-weight: 500;
-line-height: ${theme.sizing(12)}
-color: ${theme.textPrimaryBlack}
+line-height: ${props => props.theme.sizing(12)}
+color: ${props => props.theme.textPrimaryBlack}
 `;
 const VehicleCardSpan = styled.span`
-  color: ${theme.colors.lightBlue};
+  color: ${props => props.theme.colors.priceSpan};
 `;
 const VehicleCardFeatures = styled.p`
-  color: ${theme.colors.textPrimarySemiTransparent};
-  font-size: ${theme.sizing(6)};
-  line-height: ${theme.sizing(9)};
+  color: ${props => props.theme.colors.textPrimarySemiTransparent};
+  font-size: ${props => props.theme.sizing(6)};
+  line-height: ${props => props.theme.sizing(9)};
   display: inline-block;
   margin-top: 0;
   margin-bottom: 0;
@@ -52,20 +52,20 @@ const CardButton = styled.button`
   display: block;
   width: 100%;
   cursor: pointer;
-  background-color: ${theme.colors.lightBlue};
-  padding-top: ${theme.sizing(6)};
-  padding-bottom: ${theme.sizing(6)};
+  background-color: ${props => props.theme.colors.lightBlue};
+  padding-top: ${props => props.theme.sizing(6)};
+  padding-bottom: ${props => props.theme.sizing(6)};
   border: none;
   border-radius: 12px;
-  color: ${theme.colors.primaryWhite};
+  color: ${props => props.theme.colors.persistentWhite};
   font-weight: 600;
   font-size: 14px;
   line-height: 20px;
-  transition: background-color ${theme.animation.duration}
-    ${theme.animation.timingFunction};
+  transition: background-color ${props => props.theme.animation.duration}
+    ${props => props.theme.animation.timingFunction};
   &:hover,
   &:focus {
-    background-color: ${theme.colors.btnBgHover};
+    background-color: ${props => props.theme.colors.btnBgHover};
   }
 `;
 const AddToFavouritesBtn = styled.button`
@@ -82,14 +82,14 @@ const AddToFavouritesBtn = styled.button`
 const HeartIcon = styled.svg`
   width: 18px;
   height: 18px;
-  fill: ${(props) => (props.liked ? theme.colors.btnBgHover : "none")};
+  fill: ${(props) => (props.liked ? props.theme.colors.btnBgHover : "none")};
   stroke: ${(props) =>
-    props.liked ? theme.colors.btnBgHover : theme.colors.primaryWhite};
+    props.liked ? props.theme.colors.btnBgHover : props => props.theme.colors.persistentWhite};
 
   &:hover,
   &:focus {
-    fill: ${theme.colors.btnBgHover};
-    stroke: ${theme.colors.btnBgHover};
+    fill: ${props => props.theme.colors.btnBgHover};
+    stroke: ${props => props.theme.colors.btnBgHover};
   }
 `;
 const TitleWrapper = styled.div`
