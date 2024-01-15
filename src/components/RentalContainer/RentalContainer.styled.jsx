@@ -1,18 +1,17 @@
 import styled from "@emotion/styled";
-import { theme } from "constants/theme";
 import { FeaturesList } from "components/VehicleCard/VehicleCard.styled";
 
 const Wrapper = styled.div`
   width: 541px;
   border-radius: 24px;
-  background-color: ${theme.colors.primaryWhite};
-  padding: ${theme.sizing(20)};
+  background-color: ${props => props.theme.colors.primaryWhite};
+  padding: ${props => props.theme.sizing(20)};
   position: relative;
 `;
 const CloseBtn = styled.button`
   position: absolute;
-  top: ${theme.sizing(8)};
-  right: ${theme.sizing(8)};
+  top: ${props => props.theme.sizing(8)};
+  right: ${props => props.theme.sizing(8)};
   display: block;
   background-color: transparent;
   border: none;
@@ -21,8 +20,8 @@ const CloseBtn = styled.button`
 const CloseIcon = styled.svg`
   width: 24px;
   height: 24px;
-  fill: ${theme.colors.textPrimaryBlack};
-  stroke: ${theme.colors.textPrimaryBlack};
+  fill: ${props => props.theme.colors.textPrimaryBlack};
+  stroke: ${props => props.theme.colors.textPrimaryBlack};
 `;
 const ImageThumb = styled.div`
   width: 100%;
@@ -38,48 +37,48 @@ const VehiclePreview = styled.img`
 
 const Condition = styled.li`
   display: block;
-  background-color: ${theme.colors.conditionBg};
+  background-color: ${props => props.theme.colors.conditionBg};
   padding: 7px 14px;
   border-radius: 35px;
 `;
 const ConditionsList = styled.ul`
   display: flex;
   flex-wrap: wrap;
-  column-gap: 8px;
+  gap: 8px;
   margin-bottom: 24px;
 `;
 
 const ConditionDescription = styled.p`
   font-size: 12px;
   line-height: 18px;
-  color: ${theme.colors.textPrimarySemiTransparent};
+  color: ${props => props.theme.colors.textPrimarySemiTransparent};
 `;
 
 const CategorySubtitle = styled.h3`
   font-weight: 500;
   font-size: 14px;
   line-height: 20px;
-  color: ${theme.colors.textPrimaryBlack};
-  padding-bottom: ${theme.sizing(4)};
+  color: ${props => props.theme.colors.textPrimaryBlack};
+  padding-bottom: ${props => props.theme.sizing(4)};
 `;
 
 const RentalBtn = styled.a`
 display: block;
 text-decoration: none;
-background-color: ${theme.colors.lightBlue};
-padding-top: ${theme.sizing(6)};
-padding-bottom: ${theme.sizing(6)};
+background-color: ${props => props.theme.colors.lightBlue};
+padding-top: ${props => props.theme.sizing(6)};
+padding-bottom: ${props => props.theme.sizing(6)};
 border: none;
 border-radius: 12px;
-color: ${theme.colors.primaryWhite};
+color: ${props => props.theme.colors.persistentWhite};
 font-weight: 600;
 font-size: 14px;
 line-height: 20px;
-transition: background-color ${theme.animation.duration}
-  ${theme.animation.timingFunction};
+transition: background-color ${props => props.theme.animation.duration}
+  ${props => props.theme.animation.timingFunction};
 &:hover,
 &:focus {
-  background-color: ${theme.colors.btnBgHover};
+  background-color: ${props => props.theme.colors.btnBgHover};
 }
 width: 168px;
 padding: 12px 50px;

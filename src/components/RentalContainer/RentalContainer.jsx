@@ -48,7 +48,7 @@ const RentalContainer = ({ props }) => {
       </VehicleCardTitle>
       <RentalList>
         <li key={nanoid()}>
-          <VehicleCardFeatures>{address}</VehicleCardFeatures>
+          <VehicleCardFeatures>{address.split(", ").splice(-2).join(" ")}</VehicleCardFeatures>
         </li>
         <li key={nanoid()}>
           <VehicleCardFeatures>Id: {id}</VehicleCardFeatures>

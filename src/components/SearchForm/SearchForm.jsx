@@ -19,7 +19,7 @@ import {
 import { useState } from "react";
 import { makes, prices } from "assets/makes";
 import { nanoid } from "nanoid";
-import { useSelector, useDispatch } from "react-redux";
+import { useDispatch } from "react-redux";
 import { getFilteredCars } from "features/filter/operations";
 
 const SearchForm = () => {

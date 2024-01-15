@@ -1,5 +1,5 @@
 import styled from "@emotion/styled";
-import { theme } from "constants/theme";
+
 
 const Overlay = styled.div`
 position: fixed;
@@ -10,17 +10,17 @@ height: 100vh;
 display: flex;
 justify-content: center;
 align-items: center;
-background-color: ${theme.colors.overlay};
+background-color: ${props => props.theme.colors.overlay};
 z-index: 1200;
 pointer-events: ${(props) => (props.expanded ? 'auto': "none")};
 
 
 opacity: ${(props) => (props.expanded ? 1 : 0)};
-transition: opacity ${theme.animation.duration} ${theme.animation.timingFunction};
+transition: opacity ${props => props.theme.animation.duration} ${props => props.theme.animation.timingFunction};
 
 div {
     transform: scale${(props) => (props.expanded ? '(1)' : '(0.7)')}
-    transition: transform ${theme.animation.duration} ${theme.animation.timingFunction}
+    transition: transform ${props => props.theme.animation.duration} ${props => props.theme.animation.timingFunction}
 }
 `
 
