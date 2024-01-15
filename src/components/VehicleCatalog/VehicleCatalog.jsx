@@ -26,6 +26,7 @@ const VehicleCatalog = () => {
   const [page, setPage] = useState(1);
   const total = useSelector(selectCarsLength);
   const isInitialized = useRef(false);
+  let totalResults = 36;
 
   useEffect(() => {
     if (
@@ -55,7 +56,7 @@ const VehicleCatalog = () => {
     cars = favourites;
   }
   const shouldRender = !isLoading && !error && cars.length !==0;
-
+  console.log(cars.length)
 
   return (
     <>
@@ -66,7 +67,7 @@ const VehicleCatalog = () => {
         ))}
       </Catalogue>}
       {!shouldRender && location.pathname === "/favorites" && <h2>Favourites list is empty yet</h2>}
-      {shouldRender && (
+      {shouldRender &&  cars.length < totalResults && (
         <LoadMoreBtn onClick={loadMore}>Load More</LoadMoreBtn>
       )}
     </>

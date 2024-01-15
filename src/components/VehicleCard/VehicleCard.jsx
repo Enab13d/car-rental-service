@@ -94,7 +94,7 @@ cars.length && (<>
 </TitleWrapper>
   <FeaturesList>
     <li>
-      <VehicleCardFeatures>{address}</VehicleCardFeatures>
+      <VehicleCardFeatures>{address.split(", ").splice(-2).join(" ")}</VehicleCardFeatures>
     </li>
     <li>
       <VehicleCardFeatures>{rentalCompany}</VehicleCardFeatures>
@@ -104,14 +104,14 @@ cars.length && (<>
     </li>
     <li>
       <VehicleCardFeatures>
-        {make} {model}
+        {model}
       </VehicleCardFeatures>
     </li>
     <li>
       <VehicleCardFeatures>{id}</VehicleCardFeatures>
     </li>
     <li>
-      <VehicleCardFeatures>{accessories && accessories[0]}</VehicleCardFeatures>
+      <VehicleCardFeatures>{accessories && accessories[0].split(" ").slice(0, 3).join(" ")}</VehicleCardFeatures>
     </li>
   </FeaturesList>
   <CardButton onClick={showModal}>Learn more</CardButton>

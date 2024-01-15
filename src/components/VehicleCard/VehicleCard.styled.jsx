@@ -3,6 +3,7 @@ import { theme } from "constants/theme";
 
 const CardWrapper = styled.li`
   width: 274px;
+  height: 426px;
 `;
 const FeaturesList = styled.ul`
   list-style: none;
