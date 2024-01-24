@@ -9,10 +9,12 @@
       useEffect(() => {
         if (expanded) {
           window.addEventListener("keydown", onModalClose);
+          document.body.style.overflow = "hidden";
         }
 
         return () => {
           window.removeEventListener("keydown", onModalClose);
+          document.body.style.overflow = "auto";
         };
       }, [onModalClose, expanded]);
 

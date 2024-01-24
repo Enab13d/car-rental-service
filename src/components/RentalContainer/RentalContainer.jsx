@@ -3,8 +3,15 @@ import {
   CloseBtn,
   CloseIcon,
   ImageThumb,
-    VehiclePreview, Condition, ConditionsList, CategorySubtitle, ConditionDescription,
-  RentalBtn, RentalList
+  VehiclePreview,
+  Condition,
+  ConditionsList,
+  CategorySubtitle,
+  ConditionDescription,
+  RentalBtn,
+  RentalList,
+  VehicleDescription,
+  AccessoriesList
 } from "./RentalContainer.styled";
 import sprite from "../../constants/icons/symbol-defs.svg";
 import {
@@ -12,7 +19,7 @@ import {
   VehicleCardSpan,
   VehicleCardFeatures,
 } from "components/VehicleCard/VehicleCard.styled";
-import { nanoid } from "nanoid";
+
 const RentalContainer = ({ props }) => {
   const {
     id,
@@ -31,6 +38,7 @@ const RentalContainer = ({ props }) => {
     rentalConditions,
     mileage,
     hideModal,
+
   } = props;
 
   return (
@@ -41,58 +49,65 @@ const RentalContainer = ({ props }) => {
         </CloseIcon>
       </CloseBtn>
       <ImageThumb>
-        <VehiclePreview src={img} alt={description} width={469} height={314} />
+        <VehiclePreview src={img} alt={description} width={461} height={248} />
       </ImageThumb>
       <VehicleCardTitle>
         {make} <VehicleCardSpan>{model}</VehicleCardSpan>, {year}
       </VehicleCardTitle>
       <RentalList>
-        <li key={nanoid()}>
-          <VehicleCardFeatures>{address.split(", ").splice(-2).join(" ")}</VehicleCardFeatures>
+        <li key={id + "feature" + address + "city"}>
+          <VehicleCardFeatures>
+            {address.split(", ").splice(-2, 1).join(" ")}
+          </VehicleCardFeatures>
         </li>
-        <li key={nanoid()}>
+        <li key={id + "feature" + address}>
+          <VehicleCardFeatures>
+            {address.split(", ").splice(-1).join(" ")}
+          </VehicleCardFeatures>
+        </li>
+        <li key={id + "feature" + id}>
           <VehicleCardFeatures>Id: {id}</VehicleCardFeatures>
         </li>
-        <li key={nanoid()}>
+        <li key={id + "feature" + year}>
           <VehicleCardFeatures>Year: {year}</VehicleCardFeatures>
         </li>
-        <li key={nanoid()}>
+        <li key={id + "feature" + type}>
           <VehicleCardFeatures>Type: {type}</VehicleCardFeatures>
         </li>
-        <li key={nanoid()}>
+        <li key={id + "feature" + fuelConsumption}>
           <VehicleCardFeatures>
             Fuel Consumption: {fuelConsumption}
           </VehicleCardFeatures>
         </li>
-        <li key={nanoid()}>
+        <li key={id + "feature" + engineSize}>
           <VehicleCardFeatures>Engine size: {engineSize}</VehicleCardFeatures>
         </li>
       </RentalList>
-      <ConditionDescription>{description}</ConditionDescription>
+      <VehicleDescription>{description}</VehicleDescription>
       <CategorySubtitle>Accessories and functionalities:</CategorySubtitle>
       {accessories && (
-        <RentalList>
-          {accessories.map((a) => (
-            <li key={nanoid()}>
+        <AccessoriesList>
+          {accessories.map((a, idx) => (
+            <li key={id + "accessories" + idx}>
               <VehicleCardFeatures>{a}</VehicleCardFeatures>
             </li>
           ))}
-        </RentalList>
+        </AccessoriesList>
       )}
       {functionalities && (
-        <RentalList>
-          {functionalities.map((f) => (
-            <li key={nanoid()}>
+        <AccessoriesList extended>
+          {functionalities.map((f, idx) => (
+            <li key={id + "functionalities" + idx}>
               <VehicleCardFeatures>{f}</VehicleCardFeatures>
             </li>
           ))}
-        </RentalList>
+        </AccessoriesList>
       )}
       <CategorySubtitle>Rental Conditions:</CategorySubtitle>
       {rentalConditions && (
         <ConditionsList>
-          {rentalConditions.split("\n").map((c) => (
-            <Condition key={nanoid()}>
+          {rentalConditions.split("\n").map((c, idx) => (
+            <Condition key={id + "conditions" + idx}>
               <ConditionDescription>{c}</ConditionDescription>
             </Condition>
           ))}
@@ -107,8 +122,8 @@ const RentalContainer = ({ props }) => {
             </ConditionDescription>
           </Condition>
         </ConditionsList>
-          )}
-          <RentalBtn href="tel:+380730000000">Rental car</RentalBtn>
+      )}
+      <RentalBtn href="tel:+380730000000">Rental car</RentalBtn>
     </Wrapper>
   );
 };

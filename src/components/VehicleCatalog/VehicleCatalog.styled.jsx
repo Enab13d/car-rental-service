@@ -13,7 +13,8 @@ margin-bottom: ${props => props.theme.sizing(50)};
 `
 const LoadMoreBtn = styled(CardButton)`
 width: 120px;
-heightL 30px;
+height: 50px;
+margin-bottom: ${props => props.theme.sizing(20)};
 `
 const SectionWrapper = styled.section`
 display: flex;

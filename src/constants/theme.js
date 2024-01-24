@@ -1,3 +1,10 @@
+
+const mq = {
+  laptop: "@media screen and (min-width: 768px)",
+  widescreen: "@media screen and (min-width: 1440px)",
+
+}
+
 const theme = {
   colors: {
     lightBlue: "#3470FF",
@@ -34,6 +41,7 @@ const theme = {
     duration: "300ms",
   },
   sizing: (value) => `${value * 2}px`,
+  mq,
 };
 
 const darkTheme = {
@@ -72,6 +80,7 @@ const darkTheme = {
     duration: "300ms",
   },
   sizing: (value) => `${value * 2}px`,
+  mq
 };
 
 export { theme, darkTheme };

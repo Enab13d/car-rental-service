@@ -34,8 +34,9 @@ const VehiclePreview = styled.img`
 const VehicleCardTitle = styled.h2`
 font-size: 16px;
 font-weight: 500;
-line-height: ${props => props.theme.sizing(12)}
-color: ${props => props.theme.textPrimaryBlack}
+line-height: ${props => props.theme.sizing(12)};
+color: ${props => props.theme.textPrimaryBlack};
+
 `;
 const VehicleCardSpan = styled.span`
   color: ${props => props.theme.colors.priceSpan};
