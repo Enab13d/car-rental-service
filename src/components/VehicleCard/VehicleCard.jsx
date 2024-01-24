@@ -117,7 +117,6 @@ cars.length && (<>
   <CardButton onClick={showModal}>Learn more</CardButton>
       </CardWrapper>
       <Modal props={modalProps}></Modal>
-{/* {isModalOpen && <Modal props={modalProps}></Modal>} */}
 </>)
   );
 };

@@ -30,6 +30,7 @@ const DropDownListContainer = styled.div`
   top: 0;
   left: 0;
   overflow: ${(props) => (props.expand ? "visible" : "hidden")};
+
 `;
 const DropDownList = styled.ul`
   position: absolute;
@@ -39,7 +40,7 @@ const DropDownList = styled.ul`
   padding-bottom: ${props => props.theme.sizing(7)};
   height: 272px;
   overflow-y: scroll;
-
+  overflow-x: hidden;
   border-radius: 14px;
   background-color: ${props => props.theme.colors.dropDownBg};
   width: ${props => props.theme.sizing(122)};

@@ -1,4 +1,4 @@
-import { Section } from "SharedLayout/SharedLayout.styled";
+import { Section } from "Layout/Layout.styled";
 import { HeroContainter, StyledTitle } from "./HomePage.styled";
 const HomePage = () => {
   return (

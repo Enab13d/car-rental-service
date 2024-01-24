@@ -1,14 +1,14 @@
 import { lazy} from "react";
 
-import { Routes, Route, Navigate } from "react-router-dom";
-import { SharedLayout } from "SharedLayout";
+import { Routes, Route } from "react-router-dom";
+import { SharedLayout } from "Layout";
 
 
 
 
-const HomePage = lazy(() => import("../../views/HomePage"));
-const CatalogPage = lazy(() => import("../../views/CatalogPage"));
-const FavoritesPage = lazy(() => import("../../views/FavoritesPage"));
+const HomePage = lazy(() => import("../../pages/HomePage"));
+const CatalogPage = lazy(() => import("../../pages/CatalogPage"));
+const FavoritesPage = lazy(() => import("../../pages/FavoritesPage"));
 
 
 
@@ -21,7 +21,7 @@ function App() {
         <Route index element={<HomePage />} />
         <Route path="/catalog" element={<CatalogPage />} />
         <Route path="/favorites" element={<FavoritesPage />} />
-        <Route path="*" element={<Navigate to={<HomePage />} />} />
+        <Route path="*" element={<HomePage/>} />
       </Route>
     </Routes>
   );

@@ -25,7 +25,7 @@ const CloseIcon = styled.svg`
 `;
 const ImageThumb = styled.div`
   width: 100%;
-  height: 314px;
+  height: 248px;
   margin-bottom: 14px;
   overflow: hidden;
   border-radius: 14px;
@@ -46,20 +46,32 @@ const ConditionsList = styled.ul`
   flex-wrap: wrap;
   gap: 8px;
   margin-bottom: 24px;
+  ${props => props.theme.mq.laptop} {
+    margin-bottom: ${props => props.theme.sizing(4)};
+  
+  };
 `;
 
 const ConditionDescription = styled.p`
   font-size: 12px;
   line-height: 18px;
-  color: ${props => props.theme.colors.textPrimarySemiTransparent};
+  color: ${props => props.theme.colors.textPrimaryBlack};
+
 `;
+const VehicleDescription = styled(ConditionDescription)`
+margin-bottom: ${props => props.theme.sizing(12)};
+${props => props.theme.mq.laptop} {
+  margin-bottom: ${props => props.theme.sizing(4)};
+
+};
+`
 
 const CategorySubtitle = styled.h3`
   font-weight: 500;
   font-size: 14px;
   line-height: 20px;
   color: ${props => props.theme.colors.textPrimaryBlack};
-  padding-bottom: ${props => props.theme.sizing(4)};
+  margin-bottom: ${props => props.theme.sizing(3)};
 `;
 
 const RentalBtn = styled.a`
@@ -84,7 +96,20 @@ width: 168px;
 padding: 12px 50px;
 `
 const RentalList = styled(FeaturesList)`
-margin-bottom: 0;
+margin-bottom: 14px;
+row-gap: 4px;
+${props => props.theme.mq.laptop} {
+  margin-bottom: ${props => props.theme.sizing(3)};
+  row-gap: ${props => props.theme.sizing(1)}
+
+};
+`
+const AccessoriesList = styled(RentalList)`
+margin-bottom: ${props => props.extended ? "24px" : "0"};
+${props => props.theme.mq.laptop} {
+  margin-bottom: ${props => props.extended ? "12px" : "0"};
+
+};
 `
 export {
   Wrapper,
@@ -98,4 +123,6 @@ export {
     ConditionDescription,
     RentalBtn,
   RentalList,
+  VehicleDescription,
+  AccessoriesList
 };
